@@ -1,0 +1,23 @@
+services:
+  promptshield:
+    build: ./challenges/01-easy-promptshield
+    container_name: ctf-easy-promptshield
+    ports:
+      - "8001:5000"
+    restart: unless-stopped
+
+  pixelquest:
+    build: ./challenges/04-game-pixelquest
+    container_name: ctf-game-pixelquest
+    ports:
+      - "8004:8000"
+    restart: unless-stopped
+
+  neurocaptcha:
+    build: ./challenges/06-game-neurocaptcha
+    container_name: ctf-game-neurocaptcha
+    ports:
+      - "8006:8000"
+    environment:
+      - FLAG=CTF{m0d3rn_c4ptch4_tur1ng_r1ddl3_pwn3d_2026}
+    restart: unless-stopped
